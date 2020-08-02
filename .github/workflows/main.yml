@@ -3,7 +3,7 @@ name: Build and deploy website
 on: push
 
 jobs:
-  setup:
+  build:
     runs-on: ubuntu-latest
     steps:
       # - name: Setup Node
@@ -19,11 +19,14 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Checkout submodules
-        uses: textbook/git-checkout-submodule-action@master
         with:
-          remote: true
+          ref: production
+          submodules: true
+
+      # - name: Checkout submodules
+      #   uses: textbook/git-checkout-submodule-action@master
+      #   with:
+      #     remote: true
           
       # - name: Checkout submodules
       #   shell: bash
