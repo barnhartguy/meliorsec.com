@@ -20,8 +20,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: production
           submodules: true
+          remote: true
 
       # - name: Checkout submodules
       #   uses: textbook/git-checkout-submodule-action@master
